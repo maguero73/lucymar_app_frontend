@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Función Slide</title>
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+  <div class="cabecera">
+    <p class="logo">Mariano Aguero</p>
+  </div>
+
+  <div id="login">
+    <p id="abierto">Login</p>
+    <form id="login-form">
+      <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="usuario">
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="contraseña">
+      </p>
+      <p>
+        <input type="submit" name="button" id="boton" value="Enviar">
+      </p>
+    </form>
+  </div>
+
+  <div class="contenido">
+    <div class="principal">
+      <h1>LUCYMAR - APP</h1>
+      <p>Haga clic en el botón de login</p>
+    </div>
+  </div>
+
+  <script src="Jquery/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#abierto").click(function() {
+        $("#login form").slideToggle(300);
+      });
+
+      $("#login-form").submit(function(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+        // Validar que los campos no estén vacíos
+        var username = $("#usuario").val();
+        var password = $("#contraseña").val();
+
+        if (username === "" || password === "") {
+          alert("Por favor, complete ambos campos.");
+        } else if (username === "maguero31" && password === "123456") {
+          // Almacenar el estado de autenticación en localStorage
+          window.localStorage.setItem('loggedIn', true);
+          window.location.href = "pagina_principal.html"; // Redirigir a la nueva página
+        } else
+          alert("Credenciales incorrectas.");
+      
+          
+      });
+    });
+  </script>
+</body>
+</html>

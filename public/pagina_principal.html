@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina_Principal</title>
+  <script>
+    // Verificar si el usuario está logueado
+    if (!window.localStorage.getItem('loggedIn')) {
+      // Si no está logueado, redirigir a la página de login
+      window.location.href = 'http://localhost:8081/Login.html';
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          isRotating: false
+        };
+      },
+      mounted() {
+        this.animateLogo(); // Llamar a la animación cuando se monte el componente
+      },
+      methods: {
+        animateLogo() {
+          this.isRotating = true;
+          setTimeout(() => {
+            this.isRotating = false;
+          }, 1000); // Duración de la rotación
+        }
+      },
+      template: `
+        <div class="content">
+          <div class="logo-container">
+            <img src="/logo2.jpg" alt="Logo" class="logo" :class="{ 'rotate': isRotating }">
+          </div>
+          <div class="labels">
+            <label class="ctrl-gastos">Control de Gastos</label>
+            <label class="est-rdos">Estado de Resultados</label>
+          </div>
+          <div class="dropdown">
+            <label for="titular">Titular del Ingreso o del Gasto:</label>
+            <select id="titular" name="titular">
+              <option value="" selected>Seleccione el titular</option>
+            </select>
+          </div>
+          <div class="textbox">
+            <label for="monto">Monto Gasto:</label>
+            <input type="text" id="monto" name="monto">
+          </div>
+          <div class="radio-buttons">
+            <label for="pesos">Pesos:</label>
+            <input type="radio" id="pesos" name="moneda" value="pesos">
+            <label for="dolares">Dólares:</label>
+            <input type="radio" id="dolares" name="moneda" value="dolares">
+          </div>
+        </div>
+      `
+    });
+  </script>
+
+
+</body>
+</html>

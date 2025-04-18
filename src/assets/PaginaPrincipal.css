@@ -1,0 +1,106 @@
+.content {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    position: absolute; /* Posiciona el contenedor de la imagen de forma absoluta */
+    top: 0;             /* Alinea al borde superior */
+    left: 0;            /* Alinea al borde izquierdo */
+    padding: 5px;      /* Añade un pequeño relleno para evitar que la imagen esté pegada al borde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .logo {
+    width: 250px; /* Ajusta el ancho de la imagen a 250px */
+    height: auto; /* Mantén la proporción de la imagen */
+    transition: transform 1s ease-in-out; /* Cambié a 1 segundo para que la rotación sea visible */
+  }
+  
+  .rotate {
+    transform: rotate(360deg);
+  }
+  
+  .labels {
+    margin-top: 120px; /* Asegura que las etiquetas no se superpongan con el logo */
+    display: flex;     /* Utiliza flexbox para alinear los elementos en línea */
+    justify-content: space-between;
+    padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
+  }
+  
+  .ctrl-gastos {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 26px;
+    color: blue;
+    margin-top: 30px;
+    font-weight: bold;
+    top: '40px'
+  }
+  
+  .est-rdos {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 26px;
+    color: blue;
+    position: absolute;
+    left: 900px;
+    margin-top: 30px;
+    font-weight: bold;
+    margin-left:auto /* Mueve la etiqueta a la derecha */
+  }
+  
+  .dropdown {
+    margin-top: 100px; /* Añade un margen superior para separarlo del contenido anterior */
+    padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
+  }
+  
+  .dropdown label {
+    font-size: 16px;
+    color: blue;
+  }
+  
+  .dropdown select {
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .textbox {
+    margin-top: 20px; /* Añade un margen superior para separarlo del contenido anterior */
+    padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
+  }
+  
+  .textbox label {
+    font-size: 16px;
+    color: blue;
+  }
+  
+  .textbox input {
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .radio-buttons {
+    margin-top: 20px; /* Añade un margen superior para separarlo del contenido anterior */
+    padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
+  }
+  
+  .radio-buttons label {
+    font-size: 16px;
+    color: blue;
+    margin-right: 10px; /* Espacio entre los labels de los radios */
+  }
+  
+  .radio-buttons input {
+    margin-right: 5px; /* Espacio entre los radios */
+  }
+
+  body{
+
+    background-color: rgb(37, 27, 27);
+  }
