@@ -1,26 +1,25 @@
 <template>
   <div id="app">
-    <h1>Hola Mundo</h1>
-    <MyTest/>
+    <PaginaPrincipal />
   </div>
 </template>
 
 <script>
-
-import MyTest from './components/MyTest.vue';
-
+import PaginaPrincipal from './components/PaginaPrincipal.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    MyTest
+    PaginaPrincipal
   }
-}
+};
 </script>
 
-
-
-
 <style>
-/* Estilos adicionales para App.vue */
+/* Acá podés dejar estilos generales de la aplicación si querés */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 </style>
