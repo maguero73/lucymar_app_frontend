@@ -59,6 +59,29 @@
         console.error('Error al cargar titulares:', error);
       });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:8080/api/tipos-gasto')
+      .then(response => response.json())
+      .then(conceptos => {
+        const select = document.getElementById('concepto');
+        if (!select) {
+          console.error('No se encontró el elemento select con id="concepto"');
+          return;
+        }
+
+        conceptos.forEach(concepto => {
+          const option = document.createElement('option');
+          option.value = concepto.codigo;
+          option.textContent = concepto.descripcion;
+          select.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar conceptos de gasto:', error);
+      });
+  });
+  
   </script>
 
 

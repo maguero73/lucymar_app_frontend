@@ -23,6 +23,12 @@
       <label for="dolares">Dólares:</label>
       <input type="radio" id="dolares" name="moneda" value="dolares">
     </div>
+    <div class="dropdown">
+  <label for="concepto">Tipo de Gasto:</label>
+  <select id="concepto" name="concepto">
+    <option value="" selected>Seleccione un concepto</option>
+  </select>
+</div>
   </div>
 </template>
 
