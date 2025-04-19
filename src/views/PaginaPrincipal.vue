@@ -11,8 +11,6 @@
       <label for="titular">Titular del Ingreso o del Gasto:</label>
       <select id="titular" name="titular">
         <option value="" selected>Seleccione el titular</option>
-        <option value="ingreso1">Mariano</option>
-        <option value="ingreso2">Lucia</option>
       </select>
     </div>
     <div class="textbox">
@@ -44,7 +42,11 @@ export default {
     }
   }
 };
+
+
 </script>
+
+
 
 <style>
 

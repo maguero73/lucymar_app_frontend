@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina_Principal</title>
+  <script>
+    // Verificar si el usuario está logueado
+    if (!window.localStorage.getItem('loggedIn')) {
+      // Si no está logueado, redirigir a la página de login
+      window.location.href = 'http://localhost:8081/Login.html';
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          isRotating: false
+        };
+      },
+      mounted() {
+        this.animateLogo(); // Llamar a la animación cuando se monte el componente
+      },
+      methods: {
+        animateLogo() {
+          this.isRotating = true;
+          setTimeout(() => {
+            this.isRotating = false;
+          }, 1000); // Duración de la rotación
+        }
+      },
+
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:8080/api/titulares')
+      .then(response => response.json())
+      .then(titulares => {
+        const select = document.getElementById('titular');
+        if (!select) {
+          console.error('No se encontró el elemento select con id="titular"');
+          return;
+        }
+
+        titulares.forEach(titular => {
+          const option = document.createElement('option');
+          option.value = titular.id;
+          option.textContent = titular.nombre;
+          select.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar titulares:', error);
+      });
+  });
+  </script>
+
+
+</body>
+
+
+</html>

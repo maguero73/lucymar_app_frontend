@@ -1,40 +1,4 @@
-<template>
-    <div class="content">
-      <div class="logo-container">
-        <img
-          src="/logo2.jpg"
-          alt="Logo"
-          class="logo"
-          :class="{ rotate: isRotating }"
-        />
-      </div>
-      <div class="labels">
-        <label class="ctrl-gastos">Control de Gastos</label>
-        <label class="est-rdos">Estado de Resultados</label>
-      </div>
-      <div class="dropdown">
-        <label for="titular">Titular del Ingreso o del Gasto:</label>
-        <select v-model="titularSeleccionado" id="titular" name="titular">
-          <option disabled value="">Seleccione un titular</option>
-          <option v-for="titular in titulares" :key="titular.id" :value="titular.id">
-            {{ titular.nombre }}
-          </option>
-        </select>
-      </div>
-      <div class="textbox">
-        <label for="monto">Monto Gasto:</label>
-        <input type="text" id="monto" name="monto" />
-      </div>
-      <div class="radio-buttons">
-        <label for="pesos">Pesos:</label>
-        <input type="radio" id="pesos" name="moneda" value="pesos" />
-        <label for="dolares">Dólares:</label>
-        <input type="radio" id="dolares" name="moneda" value="dolares" />
-      </div>
-    </div>
-  </template>
-  
-  <script>
+ <script>
   export default {
     data() {
       return {
@@ -71,6 +35,42 @@
     }
   };
   </script>
+
+<template>
+  <div class="content">
+    <div class="logo-container">
+      <img
+        src="/logo2.jpg"
+        alt="Logo"
+        class="logo"
+        :class="{ rotate: isRotating }"
+      />
+    </div>
+    <div class="labels">
+      <label class="ctrl-gastos">Control de Gastos</label>
+      <label class="est-rdos">Estado de Resultados</label>
+    </div>
+    <div class="dropdown">
+      <label for="titular">Titular del Ingreso o del Gasto:</label>
+      <select v-model="titularSeleccionado" id="titular" name="titular">
+        <option disabled value="">Seleccione un titular</option>
+        <option v-for="titular in titulares" :key="titular.id" :value="titular.id">
+          {{ titular.nombre }}
+        </option>
+      </select>
+    </div>
+    <div class="textbox">
+      <label for="monto">Monto Gasto:</label>
+      <input type="text" id="monto" name="monto" />
+    </div>
+    <div class="radio-buttons">
+      <label for="pesos">Pesos:</label>
+      <input type="radio" id="pesos" name="moneda" value="pesos" />
+      <label for="dolares">Dólares:</label>
+      <input type="radio" id="dolares" name="moneda" value="dolares" />
+    </div>
+  </div>
+</template>
   
   <style scoped>
   .logo {
