@@ -54,7 +54,7 @@
   }
   
   .dropdown {
-    margin-top: 100px; /* Añade un margen superior para separarlo del contenido anterior */
+    margin-top: 50px; /* Añade un margen superior para separarlo del contenido anterior */
     padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
   }
   
@@ -70,11 +70,15 @@
   }
   
   .textbox {
+    width: 400px; /* esto agranda el recuadro horizontalmente */
+    max-width: 500px; 
+    width: 50vw; /* 50% del ancho de la pantalla */
     margin-top: 20px; /* Añade un margen superior para separarlo del contenido anterior */
     padding-left: 20px; /* Añade un pequeño relleno a la izquierda para alinear mejor con el logo */
   }
   
   .textbox label {
+    width: 400px;
     font-size: 16px;
     color: blue;
   }
@@ -104,3 +108,111 @@
 
     background-color: rgb(37, 27, 27);
   }
+
+  .fecha {
+
+    font-size: 16px;
+    color: blue;  
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+
+
+  /* SECCION GASTOS !! */
+
+
+/* Estilo general para ambos botones de gastos*/
+.botonera-gastos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* o center, según lo quieras */
+  gap: 12px; /* espacio entre los botones */
+  margin: 20px; /* separación del borde */
+}
+
+.botonera-gastos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* o center, según lo quieras */
+  gap: 12px; /* espacio entre los botones */
+  margin: 20px; /* separación del borde */
+}
+
+.botonera-gastos button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 200px;         /* fuerza el mismo ancho */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botonera-gastos button:hover {
+  background-color: #0056b3;
+}
+
+.botonera-gastos button:active {
+  transform: scale(0.96);
+}
+
+.botonera-gastos {
+  position: relative;
+  top: -220px;    /* sube */
+  left: 350px;   /* mueve a la derecha */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* SECCION INGRESOS !! */
+/* Estilo general para ambos botones de ingresos*/
+.botonera-ingresos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* o center, según lo quieras */
+  gap: 12px; /* espacio entre los botones */
+  margin: 20px; /* separación del borde */
+}
+
+.botonera-ingresos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* o center, según lo quieras */
+  gap: 12px; /* espacio entre los botones */
+  margin: 20px; /* separación del borde */
+}
+
+.botonera-ingresos button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 200px;         /* fuerza el mismo ancho */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botonera-ingresos button:hover {
+  background-color: #0056b3;
+}
+
+.botonera-ingresos button:active {
+  transform: scale(0.96);
+}
+
+.botonera-ingresos {
+  position: relative;
+  top: -40px;    /* sube */
+  left: 350px;   /* mueve a la derecha */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

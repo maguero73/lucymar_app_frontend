@@ -29,7 +29,21 @@
     <option value="" selected>Seleccione un concepto</option>
   </select>
 </div>
-  </div>
+<div class="fecha">
+  <label for="fecha">Fecha del Gasto:</label>
+  <input type="date" id="fecha" name="fecha">
+</div>
+
+<div class="botonera-gastos">
+  <button id="grabarGastoBtn">GRABAR</button>
+  <button id="nuevoBtng">NUEVO</button>
+</div>
+<div class="botonera-ingresos">
+  <button id="grabarIngresoBtn">GRABAR</button>
+  <button id="nuevoBtni">NUEVO</button>
+</div>
+</div>
+
 </template>
 
 <script>
@@ -53,7 +67,3 @@ export default {
 </script>
 
 
-
-<style>
-
-</style>
