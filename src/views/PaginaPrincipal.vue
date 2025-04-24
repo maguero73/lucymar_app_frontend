@@ -19,9 +19,9 @@
     </div>
     <div class="radio-buttons">
       <label for="pesos">Pesos:</label>
-      <input type="radio" id="pesos" name="moneda" value="pesos">
+      <input type="radio" id="ARS" name="moneda" value="ARS">
       <label for="dolares">Dólares:</label>
-      <input type="radio" id="dolares" name="moneda" value="dolares">
+      <input type="radio" id="USD" name="moneda" value="USD">
     </div>
     <div class="dropdown">
   <label for="concepto">Tipo de Gasto:</label>
