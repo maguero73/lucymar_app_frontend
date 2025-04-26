@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import PaginaPrincipal from './components/PaginaPrincipal.vue';
+import PaginaPrincipal from './views/PaginaPrincipal.vue';
 
 export default {
   name: 'App',

@@ -2,7 +2,9 @@ const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
   devServer: {
-    port: 8081
+    port: 8081,
+    historyApiFallback: false
+    
   },
   transpileDependencies: true,
   pages: {
@@ -22,14 +24,14 @@ module.exports = defineConfig({
       filename: 'funcion_bind.html'
     },
     Login: {
-      entry: 'src/Login.js',
-      template: 'public/Login.html',
-      filename: 'Login.html'
+      entry: 'src/login.js',
+      template: 'public/login.html',
+      filename: 'login.html'
     },
     funcion_logo: {
       entry: 'src/pagina_principal.js',
       template: 'public/pagina_principal.html',
-      filename: 'pagina_principal.html'
+      filename: 'pagina_principal.html' 
     }
   }
 })
