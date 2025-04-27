@@ -101,7 +101,22 @@
   }
   
   .radio-buttons input {
+    position: relative;
+    top: -20px;
     margin-right: 5px; /* Espacio entre los radios */
+  }
+
+  .radio-buttons-i{
+    position: relative;
+    top: 300px;
+    margin-right: 10px; /* Espacio entre los radios */
+
+  }
+
+  .radio-buttons-i label {
+    font-size: 16px;
+    color: blue;
+    margin-right: 10px; /* Espacio entre los labels de los radios */
   }
 
   body{
@@ -118,7 +133,7 @@
   }
 
 
-  /* SECCION GASTOS !! */
+  /* BOTONES SECCION GASTOS !! */
 
 
 /* Estilo general para ambos botones de gastos*/
@@ -216,3 +231,24 @@
   flex-direction: column;
   gap: 12px;
 }
+
+/* BOTON DE CERRAR SESION */
+
+ #logoutBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+
+  #logoutBtn:hover {
+    background-color: #ff1a1a;
+  }

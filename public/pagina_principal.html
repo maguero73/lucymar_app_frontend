@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina_Principal</title>
+  <title>Lucymar App</title>
   <script>
-    // Verificar si el usuario está logueado
-    if (!window.localStorage.getItem('loggedIn')) {
-      // Si no está logueado, redirigir a la página de login
-      window.location.href = 'http://localhost:8081/login.html';
-    }
+if (sessionStorage.getItem('logueado') !== 'true') {
+  // No está logueado: lo redireccionás de nuevo al login
+  window.location.href = 'login.html';
+}
+
   </script>
 </head>
 <body>
+  <button id="logoutBtn">Cerrar sesión</button>
   <div id="app"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -135,6 +136,22 @@
     }
 
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      if (confirm("¿Estás seguro que querés cerrar sesión?")) {
+        // Borrar datos de sesión
+        sessionStorage.removeItem('logueado');
+        localStorage.removeItem('loggedIn');
+        
+        // Redirigir al login
+        window.location.href = 'login.html';
+      }
+    });
+  }
+});
 </script>
 
   

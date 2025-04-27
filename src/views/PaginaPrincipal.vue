@@ -17,7 +17,17 @@
       <label for="monto">Monto Gasto:</label>
       <input type="text" id="monto" name="monto">
     </div>
+    <div class="textbox" style="position: relative; top: 290px;">
+      <label for="montoi">Monto Ingreso:</label>
+      <input type="text" id="montoi" name="montoi">
+    </div>
     <div class="radio-buttons">
+      <label for="pesos">Pesos:</label>
+      <input type="radio" id="ARS" name="moneda" value="ARS">
+      <label for="dolares">Dólares:</label>
+      <input type="radio" id="USD" name="moneda" value="USD">
+    </div>
+    <div class="radio-buttons-i">
       <label for="pesos">Pesos:</label>
       <input type="radio" id="ARS" name="moneda" value="ARS">
       <label for="dolares">Dólares:</label>

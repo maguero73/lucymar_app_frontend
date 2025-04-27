@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Función Slide</title>
+  <title>Login</title>
   <link rel="stylesheet" href="login.html">
 </head>
 <body>
@@ -52,9 +52,11 @@
         if (username === "" || password === "") {
           alert("Por favor, complete ambos campos.");
         } else if (username === "maguero31" && password === "123456") {
-          // Almacenar el estado de autenticación en localStorage
-          window.localStorage.setItem('loggedIn', true);
+          // Almacenar el estado de autenticación
+          sessionStorage.setItem('logueado', 'true');
+          setTimeout(() => {
           window.location.href = "pagina_principal.html"; // Redirigir a la nueva página
+        }, 100);
         } else
           alert("Credenciales incorrectas.");
       
