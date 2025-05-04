@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucymar App</title>
-  <script>
-if (sessionStorage.getItem('logueado') !== 'true') {
-  // No está logueado: lo redireccionás de nuevo al login
-  window.location.href = 'login.html';
-}
 
+  <script>
+  console.log("✅ Autenticación exitosa! Entraste a la página principal");
   </script>
+   
+  <script>
+    window.onload = function() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        // Redirige a login si no hay token
+        window.location.href = 'login.html';
+      }
+    }
+  </script>
+  
 </head>
 <body>
   <button id="logoutBtn">Cerrar sesión</button>
@@ -42,29 +50,50 @@ if (sessionStorage.getItem('logueado') !== 'true') {
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8080/api/titulares')
-      .then(response => response.json())
-      .then(titulares => {
-        const select = document.getElementById('titular');
-        if (!select) {
-          console.error('No se encontró el elemento select con id="titular"');
-          return;
-        }
+    const token = localStorage.getItem("token"); // Recuperar el token
+    fetch('http://localhost:8080/api/titulares', 
+    {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  })
 
-        titulares.forEach(titular => {
-          const option = document.createElement('option');
-          option.value = titular.id;
-          option.textContent = titular.nombre;
-          select.appendChild(option);
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar titulares:', error);
+  .then(response => {
+      if (!response.ok) {
+        throw new Error("No autorizado o error en la solicitud");
+      }
+      return response.json();
+    })
+    .then(titulares => {
+      const select = document.getElementById('titular');
+      if (!select) {
+        console.error('No se encontró el elemento select con id="titular"');
+        return;
+      }
+
+      titulares.forEach(titular => {
+        const option = document.createElement('option');
+        option.value = titular.id;
+        option.textContent = titular.nombre;
+        select.appendChild(option);
       });
-  });
+    })
+    .catch(error => {
+      console.error('Error al cargar titulares:', error);
+    });
+});
 
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8080/api/tipos-gasto')
+document.addEventListener("DOMContentLoaded", function () {
+  const token = localStorage.getItem("token");
+
+  fetch("http://localhost:8080/api/tipos-gasto", {
+    method: "GET",
+    headers: {
+      "Authorization": "Bearer " + token
+    }
+  }) 
+
       .then(response => response.json())
       .then(conceptos => {
         const select = document.getElementById('concepto');
@@ -90,7 +119,7 @@ if (sessionStorage.getItem('logueado') !== 'true') {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-
+    const token = localStorage.getItem("token");
     // Asignar evento al botón GRABAR
     const grabarBtn = document.getElementById("grabarGastoBtn");
     if (grabarBtn) {
@@ -110,8 +139,9 @@ if (sessionStorage.getItem('logueado') !== 'true') {
         fetch("http://localhost:8080/api/gastos", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
-          },
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
           body: JSON.stringify(gasto)
         })
           .then(response => {
@@ -142,12 +172,16 @@ if (sessionStorage.getItem('logueado') !== 'true') {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
       if (confirm("¿Estás seguro que querés cerrar sesión?")) {
-        // Borrar datos de sesión
-        sessionStorage.removeItem('logueado');
-        localStorage.removeItem('loggedIn');
-        
-        // Redirigir al login
-        window.location.href = 'login.html';
+
+function cerrarSesion() {
+    // 1. Borra el token del localStorage
+    localStorage.removeItem('token');
+  // 2. Redirige al login
+  window.location.href = 'login.html';
+}
+
+cerrarSesion();
+
       }
     });
   }

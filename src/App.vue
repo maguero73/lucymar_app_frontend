@@ -9,6 +9,9 @@ import PaginaPrincipal from './views/PaginaPrincipal.vue';
 
 export default {
   name: 'App',
+  mounted() {
+    console.log("Componente montado");
+  },
   components: {
     PaginaPrincipal
   }
