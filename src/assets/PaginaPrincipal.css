@@ -281,3 +281,22 @@
   #logoutBtn:hover {
     background-color: #ff1a1a;
   }
+
+  #estaBtn {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+
+  #estaBtn:hover {
+    background-color: #ff1a1a;
+  }

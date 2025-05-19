@@ -37,7 +37,12 @@ module.exports = defineConfig({
       template: 'public/funcion_aum_dism.html', // Plantilla HTML para la página principal "funcion_aum_dism"
       filename: 'funcion_aum_dism.html'  // Nombre del archivo de salida
 
+    },
 
-    }
+    estadistica: {
+      entry: 'src/estadistica.js',     // Punto de entrada para la pagina principal "estadistica"
+      template: 'public/estadistica.html', // Plantilla HTML para la página principal "estadistica"
+      filename: 'estadistica.html'  // Nombre del archivo de salida
+    },
   }
 })
